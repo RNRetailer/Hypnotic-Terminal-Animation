@@ -14,14 +14,12 @@ lines_printed_per_second = 5  # number of lines printed per second
 
 # CODE
 
-def per_second_output(_frame_input):
+length_of_frame_input = len(frame_input)
+last_char = frame_input[-1]
+frame_input = frame_input[:-1]
+
+def per_second_output():
     seconds = gmtime().tm_sec
-
-    last_char = _frame_input[-1]
-
-    frame_input = _frame_input[:-1]
-
-    length_of_frame_input = len(_frame_input)
 
     frame_index = seconds % length_of_frame_input
     
@@ -45,7 +43,7 @@ def per_second_output(_frame_input):
         
 if __name__ == '__main__':
     while True:
-        per_second_output(frame_input)
+        per_second_output()
         sleep(1)
 
 # /CODE
